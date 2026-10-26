@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Dom dan event</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1 id="judul"> Latihan DOM</h1>
+    <p id="pesan"> Belum ada tindakan. </p>
+    <button id="tombolAksi" type="button">Klik saya</button>
+<label for="namaInput"> Nama: </label>
+<input type="text" id="namaInput" maxlength="40">
+<p>Jumlah karakter: <span id="jumlahKarakter">0</span> </p>
+
+<script>
+const namaInput = document.getElementById("namaInput");
+const jumlahKarakter = document.getElementById("jumlahKarakter");
+
+namaInput.addEventListener("input", function () {
+    jumlahKarakter.textContent = namaInput.value.length;
+});
+</script>
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+</head>
+<body>
+
+    <h2>Form Pendaftaran</h2>
+
+    <form id="formPendaftaran" novalidate>
+        <label for="nama">Nama lengkap</label>
+        <input id="nama" name="nama" type="text">
+        <br><br>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email">
+        <br><br>
+
+        <label for="usia">Usia</label>
+        <input id="usia" name="usia" type="number" min="17" max="100">
+        <br><br>
+
+        <button type="submit">Daftar</button>
+    </form>
+
+    <p id="pesanForm" aria-live="polite"></p>
+
+    <script>
+        const form = document.getElementById("formPendaftaran");
+        const pesanForm = document.getElementById("pesanForm");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nama = document.getElementById("nama").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const usiaInput = document.getElementById("usia").value;
+            const usia = Number(usiaInput);
+
+            const polaEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (nama === "") {
+                pesanForm.textContent = "Nama wajib diisi.";
+            } else if (!polaEmail.test(email)) {
+                pesanForm.textContent = "Format email tidak valid.";
+            } else if (usiaInput === "" || !Number.isFinite(usia) || usia < 17 || usia > 100) {
+                pesanForm.textContent = "Usia harus antara 17 sampai 100 tahun.";
+            } else {
+                pesanForm.textContent = "Pendaftaran berhasil! Halo, " + nama + ".";
+            }
+        });
+    </script>
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Tugas</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <section>
+        <h2>Daftar Tugas</h2>
+
+        <label for="inputTugas">Tugas baru</label>
+        <input id="inputTugas" type="text">
+
+        <button id="tambahTugas" type="button">Tambah</button>
+
+        <p id="pesanTugas" aria-live="polite"></p>
+
+        <ul id="daftarTugas"></ul>
+    </section>
+
+</body>
+</html>
+
+</body>
+</html>

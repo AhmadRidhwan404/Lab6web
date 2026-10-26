@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand">Workshop<span>Hub.</span></div>
+        <span class="nav-label">Pendaftaran Online</span>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <span class="tag">OPEN REGISTRATION</span>
+            <h1>Kembangkan Skill,<br><span>Mulai dari Sini.</span></h1>
+            <p>Daftarkan diri kamu dan ikuti workshop seru untuk
+                menambah ilmu serta pengalaman baru.</p>
+            <div class="info">
+                <div class="info-item">
+                    <strong>100%</strong>
+                    <span>Online</span>
+                </div>
+                <div class="info-item">
+                    <strong>3 Sesi</strong>
+                    <span>Pilihan waktu</span>
+                </div>
+                <div class="info-item">
+                    <strong>Gratis</strong>
+                    <span>Biaya daftar</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-card">
+            <div class="form-heading">
+                <div>
+                    <span class="tag">FORMULIR</span>
+                    <h2>Daftar Workshop</h2>
+                    <p>Isi data kamu dengan benar.</p>
+                </div>
+                <div class="form-icon">✦</div>
+            </div>
+
+            <form id="registrationForm" novalidate>
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama"
+                        placeholder="Masukkan nama lengkap"
+                        maxlength="100" autocomplete="name">
+                    <div class="field-info">
+                        <small id="namaError" class="error"></small>
+                        <small id="charCount">0/100 karakter</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email"
+                        placeholder="nama@email.com"
+                        autocomplete="email">
+                    <small id="emailError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="sesi">Pilih Sesi Workshop</label>
+                    <select id="sesi">
+                        <option value="">-- Pilih sesi --</option>
+                        <option value="09.00 - 11.00 WIB">
+                            Pagi (09.00 - 11.00 WIB)
+                        </option>
+                        <option value="13.00 - 15.00 WIB">
+                            Siang (13.00 - 15.00 WIB)
+                        </option>
+                        <option value="19.00 - 21.00 WIB">
+                            Malam (19.00 - 21.00 WIB)
+                        </option>
+                    </select>
+                    <small id="sesiError" class="error"></small>
+                </div>
+
+                <div id="statusMessage"
+                    class="status-message"
+                    role="status"
+                    aria-live="polite"></div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">
+                        Daftar Sekarang <span>→</span>
+                    </button>
+                    <button type="button" id="resetButton"
+                        class="btn-secondary">
+                        Reset
+                    </button>
+                </div>
+            </form>
+
+            <div class="summary">
+                <h3>Ringkasan Pendaftaran</h3>
+                <div class="summary-row">
+                    <span>Nama</span>
+                    <strong id="summaryNama">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Email</span>
+                    <strong id="summaryEmail">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Sesi</span>
+                    <strong id="summarySesi">-</strong>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 WorkshopHub. Mini Project Pemrograman Web.</p>
+    </footer>
+</body>
+</html>
